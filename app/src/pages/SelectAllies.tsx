@@ -99,9 +99,9 @@ const SelectAllies: React.FC = () => {
               right="2rem" 
               w="12rem" 
               h="4rem"
-              background="#8CF583"
+              background="#F46565"
               _hover={{
-                background: "#7ad472"
+                background: "#d45656"
               }}
             >
               Proximo
