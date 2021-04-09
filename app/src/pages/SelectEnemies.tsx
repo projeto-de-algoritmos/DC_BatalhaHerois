@@ -90,7 +90,7 @@ const SelectEnemies: React.FC = () => {
           >
             HERO BATTLE
           </Text>
-          <Link as={ReachLink} to='/enemies'>
+          <Link as={ReachLink} to='/winner'>
             <Button 
               pos="fixed" 
               top="50%" 
