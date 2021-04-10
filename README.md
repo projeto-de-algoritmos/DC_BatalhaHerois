@@ -1,4 +1,4 @@
-# Greed - Dora Aventureira
+# D&C - HERO BATTLE
 
 **Número da Lista**: 10<br>
 **Conteúdo da Disciplina**: Algoritmos Dividir para Conquistar<br>
