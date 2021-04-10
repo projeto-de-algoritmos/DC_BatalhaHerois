@@ -127,6 +127,7 @@ const SelectEnemies: React.FC = () => {
               _hover={{
                 background: "#7ad472"
               }}
+              isDisabled={enemy.length === 4 ? false : true}
             >
               Proximo
             </Button>
@@ -138,6 +139,7 @@ const SelectEnemies: React.FC = () => {
           >
             Selecione os heróis que serão seus inimigos abaixo:
           </Text>
+          <Text>Pense bem, assim que selecionar 4 inimigos, o desafio será confirmado e você não poderá alterar!!</Text>
           <Box
             w="80%"
             d="grid"

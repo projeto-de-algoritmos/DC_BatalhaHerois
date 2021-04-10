@@ -88,14 +88,15 @@ const Winner: React.FC = () => {
         clipPath="polygon(0% 0, 100% 0%, 80% 100%, 0 100%)"
         d="flex"
         flexWrap="wrap"
-        paddingLeft="5rem"
+        justifyContent="flex-start"
+        alignItems="center"
         zIndex="-1"
       >
         {hero.map((hero, index) => (
           <Box 
             key={index}
-            w="17rem"
-            h="22.5rem"
+            w="15rem"
+            h="20rem"
             margin="2rem"
             d="flex"
             alignItems="center"
@@ -148,14 +149,15 @@ const Winner: React.FC = () => {
         clipPath="polygon(20% 0, 100% 0%, 100% 100%, 0 100%)"
         d="flex"
         flexWrap="wrap"
-        paddingLeft="20rem"
+        justifyContent="flex-end"
+        alignItems="center"
         zIndex="-1"
       >
         {enemy.map((enemy, index) => (
           <Box 
             key={index}
-            w="17rem"
-            h="22.5rem"
+            w="15rem"
+            h="20rem"
             margin="2rem"
             d="flex"
             alignItems="center"

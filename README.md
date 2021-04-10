@@ -1,45 +1,54 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Greed - Dora Aventureira
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 10<br>
+**Conteúdo da Disciplina**: Algoritmos Dividir para Conquistar<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 15/0120371  |  Bruno Oliveira Dantas |
+| 17/0031438 |  Dâmaso Júnio Pereira Brasileo |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+
+O projeto **Hero Battle** é uma aplicação do algoritmo `MergeSort`. Nele você escolhe 4 heróis e 4 inimigos que serão ordenados a partir do valor de força de cada inimigo (Esse valor é gerado aleatoriamente, o que deixa tudo mais desafiador). No final, há uma batalha entre cada heroi (do mais fraco ao mais forte) para decidir quem é o vencedor.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+## Vídeo
+
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+
+**Linguagem**: TypeScript<br>
+**Framework**: ReactJS com Chakra UI<br>
+
+Para instalação do projeto, é necessário executar os seguintes comandos:
+```
+git clone https://github.com/projeto-de-algoritmos/DC_BatalhaHerois
+
+cd DC_BatalhaHerois
+
+yarn install
+```
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+
+Para execução do projeto é necessário, após a instalação:
+```
+cd DC_BatalhaHerois
+cd app
+
+yarn start
+```
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+O comando `yarn` pode ser trocado por `npm`:
+```
+npm install
 
+npm start
+```
 
-
+É necessário ter o `NPM` ou `YARN` instalado.
 

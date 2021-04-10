@@ -125,6 +125,7 @@ const SelectAllies: React.FC = () => {
               _hover={{
                 background: "#d45656"
               }}
+              isDisabled={hero.length === 4 ? false : true}
             >
               Proximo
             </Button>
