@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image } from '@chakra-ui/image';
 import { Box, Link, Text } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 import { Link as ReachLink } from 'react-router-dom';
 
 const SelectAllies: React.FC = () => {
-  const [a, setA] = useState<Array<any>>([
+  const [hero, setHero] = useState<Array<any>>([]);
+  const [board, setBoard] = useState<Array<any>>([
     {
-      name: "Joao",
+      name: "Goku",
       img: "aaaa",
-      select: true,
+      select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
@@ -69,13 +70,34 @@ const SelectAllies: React.FC = () => {
   ]); 
 
   const onSelect = (idx: number) => {
-    console.log(a[idx]);
-    const heros = [...a];
-    heros[idx].select = !heros[idx].select;
-    setA(heros);
+    const heros = [...board];
+    var candidate = [...hero];
+
+    if(heros[idx].select === false){
+      heros[idx].select = true;
+      candidate.push(heros[idx]);
+    }
+    else if(heros[idx].select === true){
+      heros[idx].select = false;
+      for(var i = 0; i < candidate.length; i++){
+        if(candidate[i].value === heros[idx].value){
+          candidate.splice(i, 1);
+        }
+      }
+    }
+    setHero(candidate);
+    setBoard(heros);
   }
 
-
+  useEffect(() => {
+    if(hero.length === 4){
+      var area: any = document.getElementById('selectionArea');
+      area.addEventListener('click', (e: any) => {
+        e.stopPropagation();
+        e.preventDefault();
+      }, true);
+    }
+  }, [hero])
   return(
       <Box
         w="100%"
@@ -92,7 +114,7 @@ const SelectAllies: React.FC = () => {
           >
             HERO BATTLE
           </Text>
-          <Link as={ReachLink} to='/enemies'>
+          <Link as={ReachLink} to={{pathname: '/enemies', state: hero}}>
             <Button 
               pos="fixed" 
               top="50%" 
@@ -112,16 +134,18 @@ const SelectAllies: React.FC = () => {
             fontFamily="Bungee, cursive"
             marginTop="15px"
           >
-            Selecione os heróis que serão seus aliados abaixo:
+            Selecione os 4 heróis que serão seus aliados abaixo:
           </Text>
+          <Text>Pense bem, assim que selecionar 4 heróis o desafio será confirmado e você não poderá alterar!!</Text>
           <Box
             w="80%"
             d="grid"
             gridTemplateColumns="repeat(4, 1fr)"
             gridRowGap="20px"
             marginTop="30px"
+            id="selectionArea"
           >
-            {a.map((item, index) => (
+            {board.map((item, index) => (
               <Box 
                 w="17rem"
                 h="22.5rem"

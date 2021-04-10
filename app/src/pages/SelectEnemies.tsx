@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Image } from '@chakra-ui/image';
 import { Box, Link, Text } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
-import { Link as ReachLink } from 'react-router-dom';
+import { Link as ReachLink, useLocation } from 'react-router-dom';
 
 const SelectEnemies: React.FC = () => {
+  const { state }:any = useLocation();
+  
+  const [hero, setHero] = useState<Array<any>>(state);
   const [a, setA] = useState<Array<any>>([
     {
       name: "Joao",
