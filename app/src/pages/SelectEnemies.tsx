@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Image } from '@chakra-ui/image';
 import { Box, Link, Text } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
@@ -6,13 +6,13 @@ import { Link as ReachLink, useLocation } from 'react-router-dom';
 
 const SelectEnemies: React.FC = () => {
   const { state }:any = useLocation();
-  
-  const [hero, setHero] = useState<Array<any>>(state);
-  const [a, setA] = useState<Array<any>>([
+  const [hero] = useState<Array<any>>(state);
+  const [enemy, setEnemy] = useState<Array<any>>([])
+  const [board, setBoard] = useState<Array<any>>([
     {
       name: "Joao",
       img: "aaaa",
-      select: true,
+      select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
@@ -72,11 +72,34 @@ const SelectEnemies: React.FC = () => {
   ]); 
 
   const onSelect = (idx: number) => {
-    console.log(a[idx]);
-    const heros = [...a];
-    heros[idx].select = !heros[idx].select;
-    setA(heros);
+    const enemies = [...board];
+    var candidate = [...enemy];
+
+    if(enemies[idx].select === false){
+      enemies[idx].select = true;
+      candidate.push(enemies[idx]);
+    }
+    else if(enemies[idx].select === true){
+      enemies[idx].select = false;
+      for(var i = 0; i < candidate.length; i++){
+        if(candidate[i].value === enemies[idx].value){
+          candidate.splice(i, 1);
+        }
+      }
+    }
+    setEnemy(candidate);
+    setBoard(enemies);
   }
+
+  useEffect(() => {
+    if(enemy.length === 4){
+      var area: any = document.getElementById('selectionArea');
+      area.addEventListener('click', (e: any) => {
+        e.stopPropagation();
+        e.preventDefault();
+      }, true);
+    }
+  }, [enemy])
   return (
     <Box
         w="100%"
@@ -93,7 +116,7 @@ const SelectEnemies: React.FC = () => {
           >
             HERO BATTLE
           </Text>
-          <Link as={ReachLink} to='/winner'>
+          <Link as={ReachLink} to={{pathname:'/winner', state:{hero, enemy}}}>
             <Button 
               pos="fixed" 
               top="50%" 
@@ -121,8 +144,9 @@ const SelectEnemies: React.FC = () => {
             gridTemplateColumns="repeat(4, 1fr)"
             gridRowGap="20px"
             marginTop="30px"
+            id="selectionArea"
           >
-            {a.map((item, index) => (
+            {board.map((item, index) => (
               <Box 
                 w="17rem"
                 h="22.5rem"

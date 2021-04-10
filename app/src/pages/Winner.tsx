@@ -1,9 +1,22 @@
 import { Box, Text } from '@chakra-ui/layout';
-import React from 'react';
-
-// import { Container } from './styles';
+import React, {useEffect, useState} from 'react';
+import {useLocation} from 'react-router-dom';
+import MergeSort from '../mergesort';
 
 const Winner: React.FC = () => {
+
+  const { state }:any = useLocation();
+  const [hero, setHero] = useState<Array<any>>(state['hero']);
+  const [enemy, setEnemy] = useState<Array<any>>(state['enemy']);
+
+  useEffect(() => {
+    const orderedHero = MergeSort(hero);
+    const orderedEnemy = MergeSort(enemy);
+
+    setHero(orderedHero);
+    setEnemy(orderedEnemy);
+  }, []);
+
   return(
     <Box
       d="flex"
