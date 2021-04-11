@@ -4,68 +4,79 @@ import { Box, Link, Text } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 import { Link as ReachLink, useLocation } from 'react-router-dom';
 
+import browser from '../assets/enemies/browser.png'
+import buu from '../assets/enemies/Buu.png'
+import macaco from '../assets/enemies/macaco.png'
+import madara from '../assets/enemies/Madara.png'
+import naruto from '../assets/enemies/Naruto.png'
+import rocket from '../assets/enemies/Rocket.png'
+import seya from '../assets/enemies/seya.png'
+import thanos from '../assets/enemies/thanos.png'
+import uruquiorra from '../assets/enemies/Uruquiorra.png'
+import zaraki from '../assets/enemies/Zaraki.png'
+
 const SelectEnemies: React.FC = () => {
   const { state }:any = useLocation();
   const [hero] = useState<Array<any>>(state);
   const [enemy, setEnemy] = useState<Array<any>>([])
   const [board, setBoard] = useState<Array<any>>([
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Browser",
+      img: browser,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Majin Buu",
+      img: buu,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Macaco Louco",
+      img: macaco,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Madara",
+      img: madara,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Naruto",
+      img: naruto,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Equipe Rocket",
+      img: rocket,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Seya",
+      img: seya,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Thanos",
+      img: thanos,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Ulquiorra",
+      img: uruquiorra,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Zaraki",
+      img: zaraki,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     }
@@ -162,9 +173,9 @@ const SelectEnemies: React.FC = () => {
                 onClick={() => onSelect(index)}
               >
                 <Image 
-                  src="https://images.vexels.com/media/users/3/205366/isolated/preview/71aa0762ebc5f9322bf08590751d06ae-menino-feliz-estudante-personagem-by-vexels.png"
-                  objectFit="cover"
-                  boxSize="70%"
+                  src={item.img}
+                  objectFit="scale-down"
+                  boxSize="80%"
                 />
                 <Text
                   fontFamily="Bungee, cursive"

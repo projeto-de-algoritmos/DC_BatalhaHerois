@@ -4,66 +4,77 @@ import { Box, Link, Text } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 import { Link as ReachLink } from 'react-router-dom';
 
+import capitao_america from '../assets/allies/Capitao-america.png'
+import capitao_caverna from '../assets/allies/capitao-caverna.png'
+import goku from '../assets/allies/Goku.png'
+import homem_aranha from '../assets/allies/Homem-aranha.png'
+import hulk from '../assets/allies/hulk.png'
+import ichigo from '../assets/allies/Ichigo.png'
+import link from '../assets/allies/Link.png'
+import luffy from '../assets/allies/Luffy.png'
+import mario from '../assets/allies/Mario.png'
+import pikachu from '../assets/allies/Pikachu.png'
+
 const SelectAllies: React.FC = () => {
   const [hero, setHero] = useState<Array<any>>([]);
   const [board, setBoard] = useState<Array<any>>([
     {
+      name: "Capitão América",
+      img: capitao_america,
+      select: false,
+      value: Math.floor(Math.random() * (1000 - 1)) + 1
+    },
+    {
+      name: "Capitão Caverna",
+      img: capitao_caverna,
+      select: false,
+      value: Math.floor(Math.random() * (1000 - 1)) + 1
+    },
+    {
       name: "Goku",
-      img: "aaaa",
+      img: goku,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Homem-Aranha",
+      img: homem_aranha,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Hulk",
+      img: hulk,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Ichigo",
+      img: ichigo,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Link",
+      img: link,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Luffy",
+      img: luffy,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
+      name: "Mario",
+      img: mario,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     },
     {
-      name: "Joao",
-      img: "aaaa",
-      select: false,
-      value: Math.floor(Math.random() * (1000 - 1)) + 1
-    },
-    {
-      name: "Joao",
-      img: "aaaa",
-      select: false,
-      value: Math.floor(Math.random() * (1000 - 1)) + 1
-    },
-    {
-      name: "Joao",
-      img: "aaaa",
+      name: "Pikachu",
+      img: pikachu,
       select: false,
       value: Math.floor(Math.random() * (1000 - 1)) + 1
     }
@@ -160,9 +171,9 @@ const SelectAllies: React.FC = () => {
                 onClick={() => onSelect(index)}
               >
                 <Image 
-                  src="https://images.vexels.com/media/users/3/205366/isolated/preview/71aa0762ebc5f9322bf08590751d06ae-menino-feliz-estudante-personagem-by-vexels.png"
-                  objectFit="cover"
-                  boxSize="70%"
+                  src={item.img}
+                  objectFit="scale-down"
+                  boxSize="80%"
                 />
                 <Text
                   fontFamily="Bungee, cursive"

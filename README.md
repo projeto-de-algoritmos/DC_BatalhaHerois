@@ -27,7 +27,7 @@ Para instalação do projeto, é necessário executar os seguintes comandos:
 ```
 git clone https://github.com/projeto-de-algoritmos/DC_BatalhaHerois
 
-cd DC_BatalhaHerois
+cd DC_BatalhaHerois/app
 
 yarn install
 ```

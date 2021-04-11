@@ -104,7 +104,8 @@ const Winner: React.FC = () => {
             flexDirection="column"
           >
             <Image 
-              src="https://images.vexels.com/media/users/3/205366/isolated/preview/71aa0762ebc5f9322bf08590751d06ae-menino-feliz-estudante-personagem-by-vexels.png"
+              src={hero.img}
+              objectFit="scale-down"
               boxSize="70%"
               id={`h${index}`}
             />
@@ -165,7 +166,8 @@ const Winner: React.FC = () => {
             flexDirection="column"
           >
             <Image 
-              src="https://images.vexels.com/media/users/3/205366/isolated/preview/71aa0762ebc5f9322bf08590751d06ae-menino-feliz-estudante-personagem-by-vexels.png"
+              src={enemy.img}
+              objectFit="scale-down"
               boxSize="70%"
               id={`e${index}`}
             />
