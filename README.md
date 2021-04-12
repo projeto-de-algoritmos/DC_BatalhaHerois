@@ -15,6 +15,14 @@ O projeto **Hero Battle** é uma aplicação do algoritmo `MergeSort`. Nele voc�
 
 ## Screenshots
 
+![](app/src/assets/DC_1.png)
+
+![](app/src/assets/DC_2.png)
+
+![](app/src/assets/DC_3.png)
+
+![](app/src/assets/DC_4.png)
+
 ## Vídeo
 
 
