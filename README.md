@@ -25,6 +25,8 @@ O projeto **Hero Battle** é uma aplicação do algoritmo `MergeSort`. Nele voc�
 
 ## Vídeo
 
+Faça o Download do vídeo neste link:
+https://github.com/projeto-de-algoritmos/DC_BatalhaHerois/blob/master/VideoExplicativo.mp4
 
 ## Instalação 
 
